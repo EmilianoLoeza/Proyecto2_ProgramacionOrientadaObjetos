@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Uno
 {
-    public class ComportamientoCalculado : IComportamientoUno
+    public class ComportamientoCalculador : IComportamientoUno
     {
         public int ElegirIndiceCarta(JuegoUno juego, JugadorUno jugador, List<CartaUno> jugables)
         {
@@ -40,7 +40,7 @@ namespace Uno
             for (int i = 1; i < conteo.Length; i++)
                 if (conteo[i] > conteo[max]) max = i;
 
-            
+            return (ColorUno)max;
         }
 
         private int Buscar(List<CartaUno> lista, TipoCartaUno tipo)
