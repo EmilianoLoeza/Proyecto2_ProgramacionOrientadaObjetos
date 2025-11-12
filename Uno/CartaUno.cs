@@ -118,7 +118,7 @@ namespace Uno
             }
 
             if (Cartas.Count != 108)
-                throw new InvalidOperationException($"La baraja UNO debe tener 108 cartas, pero tiene {Cartas.Count}.");
+                throw new ArgumentException($"La baraja UNO debe tener 108 cartas, pero tiene {Cartas.Count}.");
         }
 
         public void Mezclar()
