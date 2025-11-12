@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Uno
 {
-    public enum TipoCartaUno
+    public enum TipoCarta
     {
         Numero,
         Bloqueo,
@@ -13,7 +13,7 @@ namespace Uno
         Mas4
     }
 
-    public enum ColorUno
+    public enum Color
     {
         Azul,
         Rojo,
@@ -22,13 +22,13 @@ namespace Uno
         Comodines
     }
 
-    public class CartaUno
+    public class Carta
     {
-        public TipoCartaUno Tipo { get; private set; }
-        public ColorUno Color { get; private set; }
+        public TipoCarta Tipo { get; private set; }
+        public Color Color { get; private set; }
         public int? Numero { get; private set; }
 
-        public CartaUno(TipoCartaUno tipo, ColorUno color, int? numero = null)
+        public Carta(TipoCarta tipo, Color color, int? numero = null)
         {
             Tipo = tipo;
             Color = color;
@@ -37,19 +37,19 @@ namespace Uno
 
         public override string ToString()
         {
-            if (Tipo == TipoCartaUno.Numero)
+            if (Tipo == TipoCarta.Numero)
                 return $"{Numero} {Color}";
 
-            if (Color == ColorUno.Comodines)
+            if (Color == Color.Comodines)
                 return $"{Tipo}";
 
             return $"{Tipo} {Color}";
         }
 
         
-        public bool PuedeJugarseSobre(CartaUno superior, ColorUno colorActual)
+        public bool PuedeJugarseSobre(Carta superior, Color colorActual)
         {
-            if (Tipo == TipoCartaUno.Comodin || Tipo == TipoCartaUno.Mas4)
+            if (Tipo == TipoCarta.Comodin || Tipo == TipoCarta.Mas4)
                 return true;
 
             if (Color == colorActual)
@@ -57,11 +57,11 @@ namespace Uno
 
             if (superior != null)
             {
-                if (Tipo != TipoCartaUno.Numero && superior.Tipo == Tipo)
+                if (Tipo != TipoCarta.Numero && superior.Tipo == Tipo)
                     return true;
 
-                if (Tipo == TipoCartaUno.Numero &&
-                    superior.Tipo == TipoCartaUno.Numero &&
+                if (Tipo == TipoCarta.Numero &&
+                    superior.Tipo == TipoCarta.Numero &&
                     Numero == superior.Numero)
                     return true;
             }
@@ -70,19 +70,19 @@ namespace Uno
         }
     }
 
-    public class BarajaUno : IBaraja<CartaUno>
+    public class Baraja : IBaraja<Carta>
     {
-        private static readonly ColorUno[] Colores = new[]
+        private static readonly Color[] Colores = new[]
         {
-            ColorUno.Azul, ColorUno.Rojo, ColorUno.Verde, ColorUno.Amarillo
+            Color.Azul, Color.Rojo, Color.Verde, Color.Amarillo
         };
 
-        public List<CartaUno> Cartas { get; set; }
+        public List<Carta> Cartas { get; set; }
         private readonly Random rng;
 
-        public BarajaUno(int? seed = null)
+        public Baraja(int? seed = null)
         {
-            Cartas = new List<CartaUno>();
+            Cartas = new List<Carta>();
             rng = seed.HasValue ? new Random(seed.Value) : new Random();
             Generar();
         }
@@ -93,11 +93,11 @@ namespace Uno
 
             foreach (var color in Colores)
             {
-                Cartas.Add(new CartaUno(TipoCartaUno.Numero, color, 0));
+                Cartas.Add(new Carta(TipoCarta.Numero, color, 0));
                 for (int num = 1; num <= 9; num++)
                 {
-                    Cartas.Add(new CartaUno(TipoCartaUno.Numero, color, num));
-                    Cartas.Add(new CartaUno(TipoCartaUno.Numero, color, num));
+                    Cartas.Add(new Carta(TipoCarta.Numero, color, num));
+                    Cartas.Add(new Carta(TipoCarta.Numero, color, num));
                 }
             }
 
@@ -105,16 +105,16 @@ namespace Uno
             {
                 for (int i = 0; i < 2; i++)
                 {
-                    Cartas.Add(new CartaUno(TipoCartaUno.Bloqueo, color));
-                    Cartas.Add(new CartaUno(TipoCartaUno.Reversa, color));
-                    Cartas.Add(new CartaUno(TipoCartaUno.Mas2, color));
+                    Cartas.Add(new Carta(TipoCarta.Bloqueo, color));
+                    Cartas.Add(new Carta(TipoCarta.Reversa, color));
+                    Cartas.Add(new Carta(TipoCarta.Mas2, color));
                 }
             }
 
             for (int i = 0; i < 4; i++)
             {
-                Cartas.Add(new CartaUno(TipoCartaUno.Comodin, ColorUno.Comodines));
-                Cartas.Add(new CartaUno(TipoCartaUno.Mas4, ColorUno.Comodines));
+                Cartas.Add(new Carta(TipoCarta.Comodin, Color.Comodines));
+                Cartas.Add(new Carta(TipoCarta.Mas4, Color.Comodines));
             }
 
             if (Cartas.Count != 108)
@@ -133,7 +133,7 @@ namespace Uno
             }
         }
 
-        public CartaUno Robar()
+        public Carta Robar()
         {
             if (Cartas.Count == 0)
                 return null;
