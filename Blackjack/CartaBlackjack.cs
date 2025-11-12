@@ -2,7 +2,7 @@ using System;
 
 namespace Uno
 {
-    public enum PaloBlackjack
+    public enum Palo
     {
         Corazones,
         Diamantes,
@@ -10,7 +10,7 @@ namespace Uno
         Picas
     }
 
-    public enum ValorBlackjack
+    public enum Valor
     {
         Dos = 2,
         Tres = 3,
@@ -27,12 +27,12 @@ namespace Uno
         As = 11
     }
 
-    public class CartaBlackjack
+    public class Carta
     {
-        public PaloBlackjack Palo { get; }
-        public ValorBlackjack Valor { get; }
+        public Palo Palo { get; }
+        public Valor Valor { get; }
 
-        public CartaBlackjack(PaloBlackjack palo, ValorBlackjack valor)
+        public Carta(Palo palo, Valor valor)
         {
             Palo = palo;
             Valor = valor;
