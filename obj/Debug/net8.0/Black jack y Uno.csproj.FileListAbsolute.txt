@@ -1,0 +1,14 @@
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\Black jack y Uno.GeneratedMSBuildEditorConfig.editorconfig
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\Black jack y Uno.AssemblyInfoInputs.cache
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\Black jack y Uno.AssemblyInfo.cs
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\Black jack y Uno.csproj.CoreCompileInputs.cache
+D:\carrera\Tercer semestre\Black jack y Uno\bin\Debug\net8.0\Black jack y Uno.exe
+D:\carrera\Tercer semestre\Black jack y Uno\bin\Debug\net8.0\Black jack y Uno.deps.json
+D:\carrera\Tercer semestre\Black jack y Uno\bin\Debug\net8.0\Black jack y Uno.runtimeconfig.json
+D:\carrera\Tercer semestre\Black jack y Uno\bin\Debug\net8.0\Black jack y Uno.dll
+D:\carrera\Tercer semestre\Black jack y Uno\bin\Debug\net8.0\Black jack y Uno.pdb
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\Black jack y Uno.dll
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\refint\Black jack y Uno.dll
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\Black jack y Uno.pdb
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\Black jack y Uno.genruntimeconfig.cache
+D:\carrera\Tercer semestre\Black jack y Uno\obj\Debug\net8.0\ref\Black jack y Uno.dll

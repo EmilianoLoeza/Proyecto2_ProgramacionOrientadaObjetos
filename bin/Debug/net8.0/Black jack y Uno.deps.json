@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Black jack y Uno/1.0.0": {
+        "runtime": {
+          "Black jack y Uno.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Black jack y Uno/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
