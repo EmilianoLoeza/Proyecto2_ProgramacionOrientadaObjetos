@@ -27,7 +27,7 @@ namespace Uno
             }
 
             if (Cartas.Count != 52)
-                throw new InvalidOperationException($"La baraja de Blackjack debe tener 52 cartas, pero se generaron {Cartas.Count}.");
+                throw new Exception($"La baraja de Blackjack debe tener 52 cartas, pero se generaron {Cartas.Count}.");
         }
 
         public void Mezclar()
